@@ -6,8 +6,8 @@ import csv
 DEVICE = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 # Define model name and token for authentication
-lm = 'Qwen/Qwen2.5-7B'
-token = 'Not_Now'  # Replace 'YOUR_HF_TOKEN_HERE' with your Hugging Face token
+lm = 'vivo-ai/BlueLM-7B-Base'
+token = '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'  # Replace 'YOUR_HF_TOKEN_HERE' with your Hugging Face token
 
 # Load model and tokenizer with authentication token
 lang_model = AutoModelForCausalLM.from_pretrained(lm, token=token)
@@ -18,7 +18,7 @@ tokenizer = AutoTokenizer.from_pretrained(lm, token=token, use_fast=False)
 questions = open('questions.csv').readlines()
 
 # Open a CSV file to write answers
-with open('Qwen2.5_7B_answer.csv', 'w', newline='') as csvfile:
+with open('BlueLM-7B-Base.csv', 'w', newline='') as csvfile:
     csvwriter = csv.writer(csvfile)
 
     # Write header to CSV file
