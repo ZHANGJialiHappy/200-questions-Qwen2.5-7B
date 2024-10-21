@@ -7,12 +7,12 @@ DEVICE = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 # Define model name and token for authentication
 lm = 'vivo-ai/BlueLM-7B-Base'
-token = 'Token'  # Replace 'YOUR_HF_TOKEN_HERE' with your Hugging Face token
+token = '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'  # Replace 'YOUR_HF_TOKEN_HERE' with your Hugging Face token
 
 # Load model and tokenizer with authentication token
-lang_model = AutoModelForCausalLM.from_pretrained(lm, token=token)
+lang_model = AutoModelForCausalLM.from_pretrained(lm, token=token,trust_remote_code=True)
 lang_model.to(DEVICE)
-tokenizer = AutoTokenizer.from_pretrained(lm, token=token, use_fast=False)
+tokenizer = AutoTokenizer.from_pretrained(lm, token=token, use_fast=False, trust_remote_code=True)
 
 # Load questions from CSV file
 questions = open('questions.csv').readlines()
