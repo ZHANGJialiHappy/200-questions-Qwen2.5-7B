@@ -7,7 +7,7 @@ DEVICE = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 # Define model name and token for authentication
 lm = 'Qwen/Qwen2.5-7B'
-token = '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'  # Replace 'YOUR_HF_TOKEN_HERE' with your Hugging Face token
+token = 'Not_Now'  # Replace 'YOUR_HF_TOKEN_HERE' with your Hugging Face token
 
 # Load model and tokenizer with authentication token
 lang_model = AutoModelForCausalLM.from_pretrained(lm, token=token)
