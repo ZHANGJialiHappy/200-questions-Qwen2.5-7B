@@ -5,7 +5,7 @@ import torch
 DEVICE = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 lm = 'Qwen/Qwen2.5-7B'
-token = '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'
+token = 'Not_Now'
 lang_model = AutoModelForCausalLM.from_pretrained(lm, token=token)
 lang_model.to(DEVICE)
 tokenizer = AutoTokenizer.from_pretrained(lm, token=token, use_fast=False)
